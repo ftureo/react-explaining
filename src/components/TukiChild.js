@@ -15,7 +15,7 @@ const TukiChild = () => {
 
     return (
         <div className="TukiChild">
-            <h1>Tuki Child</h1>
+            <h1>Tuki Child!</h1>
             <h2>Soy hijo de TukiComponents y nieto de App</h2>
             <h3>Contador: {count} enjoy!</h3>
             <button onClick={increase}>Click Me!</button>
