@@ -1,0 +1,16 @@
+.App {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerTukiComponents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.TukiChild {
+    background-color: greenyellow;
+}
