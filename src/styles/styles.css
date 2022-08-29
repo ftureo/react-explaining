@@ -14,3 +14,12 @@
 .TukiChild {
     background-color: greenyellow;
 }
+.navbarContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.imageCart {
+    width: 50px;
+    height: 50px;
+}

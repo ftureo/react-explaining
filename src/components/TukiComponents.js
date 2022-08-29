@@ -1,7 +1,17 @@
 import TukiChild from "./TukiChild";
 
-const TukiComponents = () => {
-    console.log("TukiComponents");
+// Hago un destructuring de los props para poder usarlos en el componente
+const TukiComponents = (props) => {
+    // console.log("TukiComponents");
+    // console.log("Props en TukiComponents", props);
+
+    // Para acceder a animalsArray, debo usar props.animalsArray
+
+    // const { animalsArray } = props;
+
+    // Recuerden desestructurar los props para poder usarlos en el componente
+    // console.log("animalsArray", animalsArray);
+
     return (
         <div className="containerTukiComponents">
             <h1>Tuki Components</h1>

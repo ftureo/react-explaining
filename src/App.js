@@ -2,23 +2,18 @@
 // En el medio, declaramos el componente funcional con lo que debe renderizar y la lógica que tenga
 // Abajo del componente, van los EXPORTS
 
-import TukiComponents from "./components/TukiComponents";
+import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/NavBar";
 
 const App = () => {
     // Logica del componente
-    console.log("App");
-
+    // console.log("App");
     // Renderizar el componente
     return (
         <div className="App">
-            <h1>La banda del Tuki</h1>
-            <h2>Integrantes</h2>
-            <h3>Meli</h3>
-            <h3>Tuki</h3>
-            <h3>Guille</h3>
-            <h3>Mathi</h3>
-            <h3>Pablo</h3>
-            <TukiComponents />
+            <NavBar />
+            <ItemListContainer nameEcommerce="Tuki Store" />
+            {/* Tags de Autocierre */}
         </div>
     );
 };
