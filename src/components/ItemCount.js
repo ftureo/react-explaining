@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ItemCount = ({ stock, initial }) => {
     const [count, setCount] = useState(initial);
 
+    useEffect(() => {
+        console.log("Componente montado o actualizado!");
+        return console.log("Componente desmontado!");
+    }, [count]);
     const increase = () => {
         const newValue = count + 1;
         if (newValue <= stock) {

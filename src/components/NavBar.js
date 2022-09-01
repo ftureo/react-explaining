@@ -4,7 +4,7 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 const NavBar = () => {
     return (
         <div className="navbarContainer">
-            <Navbar bg="light" expand="lg">
+            {/* <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Brand href="#home">
                         <h1>NavBar</h1>
@@ -13,8 +13,9 @@ const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Products</Nav.Link>
-                            <NavDropdown
+                            <Nav.Link href="#link">Celulares</Nav.Link>
+                            <Nav.Link href="#link">Notebooks</Nav.Link> */}
+            {/* <NavDropdown
                                 title="Options"
                                 id="basic-nav-dropdown"
                             >
@@ -27,11 +28,13 @@ const NavBar = () => {
                                 <NavDropdown.Item href="#action/3.3">
                                     Category 3
                                 </NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
+                            </NavDropdown> */}
+            {/* </Nav>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>
+            </Navbar> */}
+            <h1>Celulares</h1>
+            <h1>Notebooks</h1>
             {/* Acá incorporamos a CartWidget en nuestro render */}
             <CartWidget />
         </div>
