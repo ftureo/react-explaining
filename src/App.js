@@ -19,6 +19,10 @@ const App = () => {
                     element={<ItemListContainer nameEcommerce="Tuki Store" />}
                 />
                 <Route
+                    path="/category/:category/:id"
+                    element={<ItemListContainer nameEcommerce="Tuki Store" />}
+                />
+                <Route
                     path="/about"
                     element={<h1>Work In Progress: About</h1>}
                 />

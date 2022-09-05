@@ -1,47 +1,38 @@
 import { useState, useEffect } from "react";
 import ItemCount from "./ItemCount";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
     console.log("products", products);
 
-    // const getProducts = async () => {
-    //     //WIP : Configure a Try / Catch block to handle errors
-    //     const response = await fetch(`https://fakestoreapi.com/products/`);
-    //     console.log("response", response);
-    //     const data = await response.json();
-    //     console.log("data", data);
-    //     setProducts(data);
-    // };
+    // localhost:3000/ - Muestra todos los productos
+    // localhost:3000/category/:category - Debe filtrar los resultados y renderizar solamente el listado que corresponda
 
-    // useEffect(() => {
-    //     getProducts();
-    // }, []); // Array de Dependencias del useEffect
-
-    // // Petición Local
-    // const getProductsLocal = () => {
-    //     fetch("../JSON/data.json")
-    //         .then((response) => response.json())
-    //         .then((data) => setProducts(data));
-    // };
-
-    // useEffect(() => {
-    //     getProductsLocal();
-    // }, []);
+    const { category } = useParams();
+    console.log("useParams", useParams());
+    console.log("Category", category);
 
     // Petición con Axios
     const getProductsAxios = async () => {
         const getAxios = await axios.get("https://fakestoreapi.com/products/");
         console.log("getAxios", getAxios);
-        setProducts(getAxios.data);
+        if (category) {
+            setProducts(
+                getAxios.data.filter((product) => product.category === category)
+            );
+        } else {
+            setProducts(getAxios.data);
+        }
+
+        // setProducts(getAxios.data);
     };
 
     useEffect(() => {
         getProductsAxios();
-    }, []);
+    }, [category]);
 
     return (
         <div>
@@ -54,3 +45,34 @@ const ItemListContainer = (props) => {
 };
 
 export default ItemListContainer;
+
+// const getProducts = async () => {
+//     //WIP : Configure a Try / Catch block to handle errors
+//     const response = await fetch(`https://fakestoreapi.com/products/`);
+//     console.log("response", response);
+//     const data = await response.json();
+//     console.log("data", data);
+//     setProducts(data);
+// };
+
+// useEffect(() => {
+//     getProducts();
+// }, []); // Array de Dependencias del useEffect
+
+// // Petición Local
+// const getProductsLocal = () => {
+//     fetch("../JSON/data.json")
+//         .then((response) => response.json())
+//         .then((data) => setProducts(data));
+// };
+
+// useEffect(() => {
+//     getProductsLocal();
+// }, []);
+
+// Petición con Axios
+// const getProductsAxios = async () => {
+//     const getAxios = await axios.get("https://fakestoreapi.com/products/");
+//     console.log("getAxios", getAxios);
+//     setProducts(getAxios.data);
+// };

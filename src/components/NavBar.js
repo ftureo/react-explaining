@@ -1,5 +1,6 @@
 import CartWidget from "./CartWidget";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -33,8 +34,15 @@ const NavBar = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar> */}
-            <h1>Celulares</h1>
-            <h1>Notebooks</h1>
+            <Link to="/">
+                <h1>Tuki E-commerce</h1>
+            </Link>
+            <Link to="/category/jewelery">
+                <h1>Jewelery</h1>
+            </Link>
+            <Link to="/category/electronics">
+                <h1>Electronics</h1>
+            </Link>
             {/* Acá incorporamos a CartWidget en nuestro render */}
             <CartWidget />
         </div>
