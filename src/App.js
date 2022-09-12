@@ -5,6 +5,7 @@
 import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
+import Form from "./components/Form";
 
 const App = () => {
     // Logica del componente
@@ -34,6 +35,7 @@ const App = () => {
                     path="/item/:id"
                     element={<h1>Work In Progress: Item</h1>}
                 />
+                <Route path="/form" element={<Form />} />
             </Routes>
             {/* Tags de Autocierre */}
         </div>

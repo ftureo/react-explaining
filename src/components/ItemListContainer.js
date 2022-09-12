@@ -38,7 +38,11 @@ const ItemListContainer = (props) => {
         <div>
             <h1>Bienvenidos a {props.nameEcommerce}</h1>
             <ItemCount stock={15} initial={1} />
-            <ItemList products={products} />
+            {products.length === 0 ? (
+                <h1>Loading ... </h1>
+            ) : (
+                <ItemList products={products} />
+            )}
             <Link to="/about">Vamos al About</Link>
         </div>
     );
