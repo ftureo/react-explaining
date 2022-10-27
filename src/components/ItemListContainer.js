@@ -6,14 +6,14 @@ import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
-    console.log("products", products);
+    // console.log("products", products);
 
     // localhost:3000/ - Muestra todos los productos
     // localhost:3000/category/:category - Debe filtrar los resultados y renderizar solamente el listado que corresponda
 
     const { category } = useParams();
-    console.log("useParams", useParams());
-    console.log("Category", category);
+    // console.log("useParams", useParams());
+    // console.log("Category", category);
 
     // Petición con Axios
     const getProductsAxios = async () => {

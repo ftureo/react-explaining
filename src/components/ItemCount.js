@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
     const [count, setCount] = useState(initial);
 
-    useEffect(() => {
-        console.log("Componente montado o actualizado!");
-        return console.log("Componente desmontado!");
-    }, [count]);
+    // useEffect(() => {
+    //     console.log("Componente montado o actualizado!");
+    //     return console.log("Componente desmontado!");
+    // }, [count]);
     const increase = () => {
         const newValue = count + 1;
         if (newValue <= stock) {
@@ -26,7 +26,13 @@ const ItemCount = ({ stock, initial }) => {
             <h3>stock: {stock}</h3>
             <button onClick={increase}>Click Me To Add!</button>
             <button onClick={decrease}>Click Me to Quit!</button>
-            <button>Add to Cart</button>
+            <button
+                onClick={() => {
+                    onAdd(count);
+                }}
+            >
+                Add to Cart
+            </button>
         </div>
     );
 };

@@ -6,39 +6,48 @@ import ItemListContainer from "./components/ItemListContainer";
 import NavBar from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
 import Form from "./components/Form";
+import CartProvider from "./context/CartProvider";
 
 const App = () => {
     // Logica del componente
     // console.log("App");
     // Renderizar el componente
     return (
-        <div className="App">
-            <NavBar />
-            <Routes>
-                <Route
-                    path="/"
-                    element={<ItemListContainer nameEcommerce="Tuki Store" />}
-                />
-                <Route
-                    path="/category/:category/:id"
-                    element={<ItemListContainer nameEcommerce="Tuki Store" />}
-                />
-                <Route
-                    path="/about"
-                    element={<h1>Work In Progress: About</h1>}
-                />
-                <Route
-                    path="*"
-                    element={<ItemListContainer nameEcommerce="Tuki Store" />}
-                />
-                <Route
-                    path="/item/:id"
-                    element={<h1>Work In Progress: Item</h1>}
-                />
-                <Route path="/form" element={<Form />} />
-            </Routes>
-            {/* Tags de Autocierre */}
-        </div>
+        <CartProvider>
+            <div className="App">
+                <NavBar />
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <ItemListContainer nameEcommerce="Tuki Store" />
+                        }
+                    />
+                    <Route
+                        path="/category/:category/:id"
+                        element={
+                            <ItemListContainer nameEcommerce="Tuki Store" />
+                        }
+                    />
+                    <Route
+                        path="/about"
+                        element={<h1>Work In Progress: About</h1>}
+                    />
+                    <Route
+                        path="*"
+                        element={
+                            <ItemListContainer nameEcommerce="Tuki Store" />
+                        }
+                    />
+                    <Route
+                        path="/item/:id"
+                        element={<h1>Work In Progress: Item</h1>}
+                    />
+                    <Route path="/form" element={<Form />} />
+                </Routes>
+                {/* Tags de Autocierre */}
+            </div>
+        </CartProvider>
     );
 };
 
