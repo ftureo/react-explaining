@@ -27,6 +27,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
             <button onClick={increase}>Click Me To Add!</button>
             <button onClick={decrease}>Click Me to Quit!</button>
             <button
+                // disabled={stock < 16 ? true : null} modo de muestra
                 onClick={() => {
                     onAdd(count);
                 }}

@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import ItemCount from "./ItemCount";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 import ItemList from "./ItemList";
+import { CartContext } from "../context/CartProvider";
 
 const ItemListContainer = (props) => {
     const [products, setProducts] = useState([]);
@@ -34,10 +35,13 @@ const ItemListContainer = (props) => {
         getProductsAxios();
     }, [category]);
 
+    const { deleteCart } = useContext(CartContext);
+
     return (
         <div>
             <h1>Bienvenidos a {props.nameEcommerce}</h1>
-            <ItemCount stock={15} initial={1} />
+            <button onClick={deleteCart}>Vaciar carrito</button>
+            {/* <ItemCount stock={15} initial={1} /> */}
             {products.length === 0 ? (
                 <h1>Loading ... </h1>
             ) : (
